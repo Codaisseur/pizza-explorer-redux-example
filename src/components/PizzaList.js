@@ -14,7 +14,14 @@ export default function PizzaList() {
         Welcome back, <strong>{user.name}</strong>! There are{" "}
         <strong>{pizzas.length}</strong> pizzas in total:
       </p>
-      <p>TODO: the list of pizzas</p>
+      <ul>
+        {pizzas.map(pizza => (
+          <li key={pizza.id}>
+            <strong>{pizza.name}</strong> ({pizza.description}) <br />
+            <em>Bought {pizza.bought} times</em>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
