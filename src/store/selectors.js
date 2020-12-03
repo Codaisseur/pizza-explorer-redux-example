@@ -17,3 +17,17 @@ export const selectRestaurantsWithPizzas = reduxState => {
       return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
     });
 };
+
+export const selectPizzasSoldByRestaurant = restaurantId => reduxState => {
+  const restaurant = reduxState.restaurants.allRestaurants.find(
+    restaurant => restaurant.id === restaurantId
+  );
+
+  if (!restaurant) {
+    return [];
+  }
+
+  return restaurant.pizzas.map(pizzaId =>
+    reduxState.pizzas.allPizzas.find(pizza => pizza.id === pizzaId)
+  );
+};
