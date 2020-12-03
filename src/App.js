@@ -1,4 +1,5 @@
 import PizzaList from "./components/PizzaList";
+import RestaurantList from "./components/RestaurantList";
 import AddPizzaForm from "./components/AddPizzaForm";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
       <PizzaList />
       <AddPizzaForm />
+      <RestaurantList />
     </div>
   );
 }
